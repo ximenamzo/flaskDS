@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% from "_formhelpers.html" import render_field %}
+    <h1>Sentiment Analyzer</h1>
+    <p>Write a movie review and find out if it's positive or negative.</p>
+    <form method="post" action="/hello">
+        <dl>
+            {{ render_field(form.review) }}
+        </dl>
+        <input type="submit" value="Analyze sentiment" name="submit_btn">
+    </form>
+</body>
+</html>
+
